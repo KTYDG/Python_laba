@@ -1,12 +1,13 @@
 def palindrome(num):
     before = num
     num = str(abs(before))
-    res = ''.join(reversed(num))
+    res = int(''.join(reversed(num)))
     if before < 0:
-        return -int(res)
-    else:
-        return int(res)
+        res = -res
+    print('\nInput: ', before)
+    print('Output:', res)
 
-num = int(input())
-print('Input: ', num)
-print('Output: ', palindrome(num))
+palindrome(123)
+palindrome(-359)
+palindrome(120)
+palindrome(2040)

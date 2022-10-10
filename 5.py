@@ -1,16 +1,22 @@
 def prime(num):
     if num == 0 or num > 100000:
-        print('Ты дурак?')
+        print(num, '? Ты зачем так делаешь?')
     elif num == 1:
-        return True
+        print(num, ' - простое')
     else:
         for i in range(2, 100000):
             if i != num and num%i == 0:
-                return False
+                print(num, '- не простое')
+                break
             elif i > num:
-                return True
+                print(num, '- простое')
+                break
 
-if prime(int(input())):
-    print("Простое")
-else:
-    print("Не простое")
+prime(1)
+prime(2)
+prime(4)
+prime(997)
+prime(15)
+prime(17)
+prime(0)
+prime(100001)

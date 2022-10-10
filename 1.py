@@ -3,11 +3,12 @@ def palindrome(num):
     num = str(before)
     res=''.join(reversed(num))
     if res == str(before):
-        return True
+        print('Это палиндром: ', before, '==', res)
     else:
-        return False
+        print('Это не палиндром: ', before, '=/=', res)
 
-if palindrome(input()):
-    print('Это палиндром')
-else:
-    print('Это не палиндром')
+palindrome(100)
+palindrome(101)
+palindrome(202020202)
+palindrome(666)
+palindrome(1234)

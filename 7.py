@@ -11,7 +11,7 @@ def caching(func):
         else:
             print('\n#####\nхехе, а я уже кэширован\n')
         res = []
-        for i in range(1, arg2):
+        for i in range(0, arg2):
             print('хаха, я вставляю результаты')
             res.append(str(wrapper.cache[cache_key]))
         print('\nхихихаха, я закэшировался снова\n#####\n')
@@ -23,7 +23,7 @@ def caching(func):
 @caching
 def prime(num, cache_amount):
     if num == 0 or num > 100000:
-        print('Ты дурак?')
+        print(num, '? Ты зачем так делаешь?')
     elif num == 1:
         return True
     else:
@@ -33,15 +33,16 @@ def prime(num, cache_amount):
             elif i > num:
                 return True
 
-num = int(input())
-cache = int(input())
-print(prime(num, cache))
-print(prime(num, cache))
-print(prime(num, cache))
+num = 17  # int(input())
+cache = 5 # int(input())
+# print(prime(num, cache))
+# print(prime(num, cache))
+# print(prime(num, cache))
 
-if prime(num, cache).pop() == str(True):
-    print("Простое число")
-else:
-    print("Не простое число")
+for statement in prime(num, cache):
+    if statement == str(True):
+        print("Простое число")
+    else:
+        print("Не простое число")
 
 
