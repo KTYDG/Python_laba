@@ -1,6 +1,3 @@
-import functools
-
-
 def caching(func):
     def wrapper(arg1, arg2):
         cache_key = arg1
@@ -33,12 +30,13 @@ def prime(num, cache_amount):
             elif i > num:
                 return True
 
-num = 17  # int(input())
-cache = 5 # int(input())
+
 # print(prime(num, cache))
 # print(prime(num, cache))
 # print(prime(num, cache))
 
+num = 17  # int(input())
+cache = 5  # int(input())
 for statement in prime(num, cache):
     if statement == str(True):
         print("Простое число")
